@@ -26,13 +26,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Linq;
 
 using Mono.Cecil;
 
 using Gendarme.Framework;
-using Gendarme.Framework.Rocks;
 using Gendarme.Rules.BadPractice;
 
 using NUnit.Framework;
@@ -44,10 +42,6 @@ using Test.Rules.Helpers;
 namespace Test.Rules.BadPractice {
 
 	internal class ClassCallingGetEntryAssembly {
-
-		public static void Main () // fake main
-		{
-		}
 
 		public void OneCall ()
 		{

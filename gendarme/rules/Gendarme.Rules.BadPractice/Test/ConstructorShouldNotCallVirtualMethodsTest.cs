@@ -26,18 +26,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Runtime.InteropServices;
 
 using Mono.Cecil;
 
 using Gendarme.Framework;
-using Gendarme.Framework.Rocks;
 using Gendarme.Rules.BadPractice;
 
 using NUnit.Framework;
-
-using Test.Rules.Definitions;
 using Test.Rules.Fixtures;
 using Test.Rules.Helpers;
 
@@ -253,7 +249,7 @@ namespace Test.Rules.BadPractice {
 		private TestRunner runner;
 
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

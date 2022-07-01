@@ -227,10 +227,10 @@ namespace Tests.Rules.Maintainability {
 			TypeWithObsoleteFields.Field = x;
 		}
 
-		static void Main ()
-		{
-			new TypeWithObsoleteMethods ().Show ();
-		}
+		// static void Main ()
+		// {
+		// 	new TypeWithObsoleteMethods ().Show ();
+		// }
 	}
 
 	[TestFixture]

@@ -13,11 +13,11 @@
  **********************************************************************/
 
 using System;
-using System.Collections;
 using System.Diagnostics;
+using Gendarme.Framework;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
-using Gendarme.Framework;
+using Mono.Cecil.Rocks;
 
 namespace Gendarme.Rules.Correctness {
 
@@ -34,7 +34,7 @@ namespace Gendarme.Rules.Correctness {
 				[NonNull] NonNullAttributeCollector nnaCollector,
 				[NonNull] IRunner runner)
 		{
-			this.stackDepth = method.Body.MaxStack;
+			this.stackDepth = method.Body.MaxStackSize;
 			this.locals = method.Body.Variables.Count;
 			if(method.HasThis)
 				this.args = method.Parameters.Count + 1;
@@ -118,7 +118,7 @@ namespace Gendarme.Rules.Correctness {
 
 			//NullDerefFrame inFrame = (NullDerefFrame)inFact;
 			NullDerefFrame outFrame = (NullDerefFrame)outFact;
-			VariableDefinitionCollection vars = method.Body.Variables;
+			var vars = method.Body.Variables;
 
 			if (Verbose) {
 				Trace.WriteLine (string.Empty);

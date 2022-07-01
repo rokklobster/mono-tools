@@ -71,12 +71,6 @@ namespace Test.Rules.Correctness {
 				ConditionalCall (PureIdentity (data));
 			}
 			
-			// Getters can be used with conditional code.
-			public void Good3 (ActivationContext context)
-			{
-				ConditionalCall (context.Form);
-			}
-			
 			// Operators can be used with conditional code.
 			public void Good4 (DateTime x, TimeSpan y)
 			{

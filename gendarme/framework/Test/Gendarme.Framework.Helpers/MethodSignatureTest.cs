@@ -31,7 +31,6 @@
 using System;
 
 using Mono.Cecil;
-using Gendarme.Framework;
 using Gendarme.Framework.Helpers;
 
 using NUnit.Framework;
@@ -43,7 +42,7 @@ namespace Test.Framework {
 
 		private TypeDefinition type;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

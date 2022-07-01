@@ -226,7 +226,7 @@ namespace Test.Rules.Naming {
 
 		private AssemblyDefinition assembly;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

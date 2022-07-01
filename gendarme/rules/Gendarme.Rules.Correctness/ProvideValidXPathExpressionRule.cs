@@ -25,19 +25,15 @@
 // THE SOFTWARE.
 
 using System;
+
 using System.Globalization;
-using System.Xml;
 using System.Xml.XPath;
-
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-
 using Gendarme.Framework;
-using Gendarme.Framework.Rocks;
 using Gendarme.Framework.Engines;
 using Gendarme.Framework.Helpers;
-
-using System.Text.RegularExpressions;
+using Gendarme.Framework.Rocks;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
 
 namespace Gendarme.Rules.Correctness {
 

@@ -25,7 +25,6 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,8 +32,6 @@ using System.Runtime.InteropServices;
 
 using Mono.Cecil;
 using Mono.Cecil.Cil;
-
-using Gendarme.Framework.Helpers;
 
 namespace Gendarme.Framework.Rocks {
 

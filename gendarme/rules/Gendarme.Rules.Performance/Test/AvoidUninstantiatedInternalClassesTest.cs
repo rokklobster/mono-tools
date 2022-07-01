@@ -49,9 +49,9 @@ namespace Test.Rules.Performance {
 		{
 		}
 
-		public static void Main (string [] args)
-		{
-		}
+		// public static void Main (string [] args)
+		// {
+		// }
 	}
 
 	internal class InstantiatedInternalClass {
@@ -60,11 +60,11 @@ namespace Test.Rules.Performance {
 		{
 		}
 
-		public static void Main (string [] args)
-		{
-			InstantiatedInternalClass i = new InstantiatedInternalClass ();
-			i.display ();
-		}
+		// public static void Main (string [] args)
+		// {
+		// 	InstantiatedInternalClass i = new InstantiatedInternalClass ();
+		// 	i.display ();
+		// }
 	}
 
 	internal class NestedInternalUninstantiatedClass {
@@ -77,10 +77,10 @@ namespace Test.Rules.Performance {
 
 	internal class NestedInternalInstantiatedClass {
 		public class NestedClass {
-			public static void Main (string [] args)
-			{
-				NestedInternalInstantiatedClass n = new NestedInternalInstantiatedClass ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	NestedInternalInstantiatedClass n = new NestedInternalInstantiatedClass ();
+			// }
 		}
 	}
 
@@ -96,9 +96,9 @@ namespace Test.Rules.Performance {
 		{
 		}
 
-		public static void Main (string [] args)
-		{
-		}
+		// public static void Main (string [] args)
+		// {
+		// }
 	}
 
 	internal struct InternalInstantiatedStruct {
@@ -107,11 +107,11 @@ namespace Test.Rules.Performance {
 		{
 		}
 
-		public static void Main (string [] args)
-		{
-			InternalInstantiatedStruct i = new InternalInstantiatedStruct ();
-			i.display ();
-		}
+		// public static void Main (string [] args)
+		// {
+		// 	InternalInstantiatedStruct i = new InternalInstantiatedStruct ();
+		// 	i.display ();
+		// }
 	}
 
 	// people may use the following two patterns to have
@@ -280,7 +280,7 @@ namespace Test.Rules.Performance {
 		
 		private AssemblyDefinition assembly;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

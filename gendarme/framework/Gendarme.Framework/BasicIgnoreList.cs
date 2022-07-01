@@ -26,14 +26,10 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
 using System.Collections.Generic;
 
 using Mono.Cecil;
-using Mono.Cecil.Metadata;
-
 using Gendarme.Framework.Helpers;
-using Gendarme.Framework.Rocks;
 
 namespace Gendarme.Framework {
 

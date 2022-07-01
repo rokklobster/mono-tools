@@ -26,10 +26,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-
 using Gendarme.Rules.Correctness;
-
 using NUnit.Framework;
 using Test.Rules.Definitions;
 using Test.Rules.Fixtures;

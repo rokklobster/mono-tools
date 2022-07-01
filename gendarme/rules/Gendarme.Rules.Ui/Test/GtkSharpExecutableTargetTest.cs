@@ -46,7 +46,7 @@ namespace Test.Rules.Ui {
 		private IAssemblyRule rule;
 		private TestRunner runner;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			rule = new GtkSharpExecutableTargetRule ();

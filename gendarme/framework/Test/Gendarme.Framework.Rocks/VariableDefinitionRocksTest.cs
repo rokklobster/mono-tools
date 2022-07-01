@@ -24,7 +24,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
@@ -32,7 +31,6 @@ using NUnit.Framework;
 using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Test.Framework.Rocks {
 
@@ -41,7 +39,7 @@ namespace Test.Framework.Rocks {
 		
 		private TypeDefinition type_def;
 		
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;
@@ -126,12 +124,12 @@ namespace Test.Framework.Rocks {
 			foreach (Instruction ins in method.Body.Instructions) {
 				VariableDefinition v = ins.GetVariable (method);
 				if (v != null) {
-					bool userName = userNames.Any (n => n == v.Name);
+					bool userName = userNames.Any (n => n == v.GetName());
 					if (userName) {
-						Assert.IsFalse (v.IsGeneratedName (), "{0} was reported as a generated name", v.Name);
+						Assert.IsFalse (v.IsGeneratedName (), "{0} was reported as a generated name", v.GetName());
 					} else {
 						++count;
-						Assert.IsTrue (v.IsGeneratedName (), "{0} was not reported as a generated name", v.Name);
+						Assert.IsTrue (v.IsGeneratedName (), "{0} was not reported as a generated name", v.GetName());
 					}
 				}
 			}

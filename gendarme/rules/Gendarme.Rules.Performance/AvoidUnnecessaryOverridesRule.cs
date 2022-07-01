@@ -29,7 +29,6 @@
 
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
-
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 

@@ -30,11 +30,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 
-using Mono.Cecil;
+using System.Globalization;
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Naming {
 

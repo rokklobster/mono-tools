@@ -27,8 +27,6 @@
 //
 
 using System;
-
-using Mono.Cecil;
 using Mono.Cecil.Cil;
 
 namespace Gendarme.Framework.Helpers {

@@ -26,8 +26,6 @@
 
 using System;
 using SR = System.Reflection;
-
-using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 
 using Mono.Cecil;
@@ -42,7 +40,7 @@ namespace Test.Framework.Rocks {
 		private TypeDefinition type_def;
 		private MethodBody body;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

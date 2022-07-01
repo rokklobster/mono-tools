@@ -29,9 +29,9 @@
 //
 
 using System;
+using Gendarme.Framework.Rocks;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
-using Gendarme.Framework.Rocks;
 
 namespace Gendarme.Rules.Smells {
 	internal sealed class Pattern {

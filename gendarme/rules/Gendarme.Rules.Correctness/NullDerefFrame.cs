@@ -14,7 +14,6 @@
 
 using System;
 using System.Text;
-
 using Gendarme.Framework;
 
 namespace Gendarme.Rules.Correctness {

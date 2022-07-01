@@ -25,7 +25,6 @@
 // THE SOFTWARE.
 
 
-using System;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Collections.Generic;
@@ -88,7 +87,7 @@ namespace Test.Rules.BadPractice {
 			List<string> ls = new List<string> { "a", "b" };
 			ls.Clear ();
 
-			var i = new FileStream ("HelloWorld.cs", FileMode.Open, FileSystemRights.Read,
+			var i = new FileStream ("HelloWorld.cs", FileMode.Open, FileAccess.Read,
 					FileShare.Read, 8, FileOptions.None);
 		}
 

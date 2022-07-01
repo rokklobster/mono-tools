@@ -26,15 +26,16 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using NUnit.Framework;
+using System;
+using System.Threading;
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 using Mono.Cecil;
-using NUnit.Framework;
-using System;
-using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using Test.Rules.Helpers;
+using AssemblyDefinition = System.Reflection.Metadata.AssemblyDefinition;
+using MethodDefinition = System.Reflection.Metadata.MethodDefinition;
+using TypeDefinition = System.Reflection.Metadata.TypeDefinition;
 
 namespace Test.Rules.Concurrency {
 
@@ -745,18 +746,7 @@ namespace Test.Rules.Concurrency {
 			private byte [] buffer = new byte [256];
 		}
 		
-		// EventLog.EntryWritten is threaded.
-		public sealed class Bad15 {
-			public void Spawn1 ()
-			{
-				var x = new System.Diagnostics.EventLog ();
-				x.EntryWritten += this.Thread1;
-			}
-			
-			private void Thread1 (object sender, System.Diagnostics.EntryWrittenEventArgs e)
-			{
-			}
-		}
+		
 		
 		// Finalizers must be threaded.
 		public sealed class Bad16 {
@@ -840,7 +830,6 @@ namespace Test.Rules.Concurrency {
 			AssertFailureCount<Bad12> (2);
 			AssertFailureCount<Bad13> (1);
 			AssertFailureCount<Bad14> (1);
-			AssertFailureCount<Bad15> (1);
 			AssertFailureCount<Bad16> (1);
 			AssertFailureCount<Bad17> (1);
 			AssertFailureCount<Bad18> (1);
@@ -855,7 +844,7 @@ namespace Test.Rules.Concurrency {
 		{
 			runner.Reset ();
 			rule.Initialize (runner);
-			AssemblyDefinition assembly = obj.GetAssembly ();
+			var assembly = obj.GetAssembly ();
 			if (!runner.Assemblies.Contains (assembly)) {
 				runner.Assemblies.Clear ();
 				runner.Assemblies.Add (assembly);
@@ -870,11 +859,11 @@ namespace Test.Rules.Concurrency {
 		
 		private void AssertFailureCount<T> (int expectedCount)
 		{
-			TypeDefinition type = DefinitionLoader.GetTypeDefinition<T> ();
+			var type = DefinitionLoader.GetTypeDefinition<T> ();
 			PreCheck (type);
 			
 //			runner.OnType (type);
-			foreach (MethodDefinition method in type.Methods) {
+			foreach (var method in type.Methods) {
 				runner.OnMethod (method);
 			}
 			

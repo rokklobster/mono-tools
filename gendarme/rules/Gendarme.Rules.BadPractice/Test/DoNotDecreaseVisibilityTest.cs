@@ -24,15 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-
-using Mono.Cecil;
 using Gendarme.Rules.BadPractice ;
 
 using NUnit.Framework;
 using Test.Rules.Fixtures;
-using Test.Rules.Helpers;
-using Test.Rules.Definitions;
 
 namespace Test.Rules.BadPractice {
 

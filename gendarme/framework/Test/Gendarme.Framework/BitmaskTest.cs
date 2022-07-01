@@ -24,15 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-
 using Gendarme.Framework;
 
 using NUnit.Framework;
 
 namespace Test.Framework {
 
-	[TestFixture]
 	public class BitmaskTest {
 
 		[Test]

@@ -104,7 +104,6 @@ namespace Test.Rules.Design {
 
 		public class SecurityPermissions {
 			public PermissionSet Permissions { get; set; }
-			public NamedPermissionSet NamedPermissions { get; set; }
 		}
 
 		public class Indexers {

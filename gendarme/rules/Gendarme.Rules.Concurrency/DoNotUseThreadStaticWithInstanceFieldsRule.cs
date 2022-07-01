@@ -26,15 +26,9 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-
 using Gendarme.Framework;
-using Gendarme.Framework.Engines;
-using Gendarme.Framework.Helpers;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Concurrency {
 

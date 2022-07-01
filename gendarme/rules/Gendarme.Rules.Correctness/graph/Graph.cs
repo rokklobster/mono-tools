@@ -11,7 +11,6 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using System;
 using System.Collections;
 
 namespace Gendarme.Rules.Correctness {

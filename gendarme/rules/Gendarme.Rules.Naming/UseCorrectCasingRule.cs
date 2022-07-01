@@ -29,16 +29,14 @@
 //
 
 using System;
-using System.Collections.Generic;
+
 using System.Globalization;
 using System.Linq;
-
-using Mono.Cecil;
-
 using Gendarme.Framework;
 using Gendarme.Framework.Engines;
 using Gendarme.Framework.Helpers;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Naming {
 

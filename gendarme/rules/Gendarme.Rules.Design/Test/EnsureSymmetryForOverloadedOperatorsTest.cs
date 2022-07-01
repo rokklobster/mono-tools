@@ -41,7 +41,7 @@ namespace Test.Rules.Design {
 		private AssemblyDefinition assembly;
 		private TypeDefinition type;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

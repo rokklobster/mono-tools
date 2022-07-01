@@ -27,9 +27,9 @@
 //
 
 using System;
-using Mono.Cecil;
 using Gendarme.Framework;
-using Gendarme.Framework.Rocks;
+using Mono.Cecil;
+
 
 namespace Gendarme.Rules.Naming {
 

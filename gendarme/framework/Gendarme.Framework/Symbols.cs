@@ -30,8 +30,6 @@ using System.Globalization;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
-using Gendarme.Framework.Rocks;
-
 namespace Gendarme.Framework {
 
 	public static class Symbols {

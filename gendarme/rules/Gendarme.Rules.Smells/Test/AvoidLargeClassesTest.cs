@@ -120,7 +120,7 @@ namespace Test.Rules.Smells {
 		private TypeDefinition type;
 		private TestRunner runner;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp () 
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

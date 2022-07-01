@@ -82,7 +82,7 @@ namespace Test.Rules.Naming {
 		AssemblyDefinition assembly;
 		bool parentMatches;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetup ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

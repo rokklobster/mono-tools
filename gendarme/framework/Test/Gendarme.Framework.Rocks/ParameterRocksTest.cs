@@ -24,7 +24,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Reflection;
 
 using Gendarme.Framework.Rocks;
@@ -40,7 +39,7 @@ namespace Test.Framework.Rocks {
 		private AssemblyDefinition assembly;
 		private TypeDefinition type;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

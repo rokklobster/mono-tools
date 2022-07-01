@@ -24,12 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-
-using Mono.Cecil;
 
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Serialization {
 

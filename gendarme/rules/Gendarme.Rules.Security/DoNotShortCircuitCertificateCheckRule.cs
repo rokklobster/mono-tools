@@ -27,14 +27,13 @@
 //
 
 using System.Collections.Generic;
-
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-
 using Gendarme.Framework;
 using Gendarme.Framework.Engines;
 using Gendarme.Framework.Helpers;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
+
 
 namespace Gendarme.Rules.Security {
 
@@ -102,17 +101,17 @@ namespace Gendarme.Rules.Security {
 	public sealed class DoNotShortCircuitCertificateCheckRule : Rule, IMethodRule {
 
 		static readonly string [] CertificatePolicyParameters = {
-			"System.Net.ServicePoint",
-			"System.Security.Cryptography.X509Certificates.X509Certificate",
-			"System.Net.WebRequest",
-			"System.Int32"
+			typeof(System.Net.ServicePoint).FullName,
+			typeof(System.Security.Cryptography.X509Certificates.X509Certificate).FullName,
+			typeof(System.Net.WebRequest).FullName,
+			typeof(System.Int32).FullName
 		};
 
 		static readonly string [] RemoteCertificateValidationParameters = {
-			"System.Object",
-			"System.Security.Cryptography.X509Certificates.X509Certificate",
-			"System.Security.Cryptography.X509Certificates.X509Chain",
-			"System.Net.Security.SslPolicyErrors"
+			typeof(System.Object).FullName,
+			typeof(System.Security.Cryptography.X509Certificates.X509Certificate).FullName,
+			typeof(System.Security.Cryptography.X509Certificates.X509Chain).FullName,
+			typeof(System.Net.Security.SslPolicyErrors).FullName
 		};
 
 		public override void Initialize (IRunner runner)

@@ -27,8 +27,6 @@
 
 using System;
 using System.Globalization;
-using System.Text;
-
 using Mono.Cecil.Cil;
 
 namespace Gendarme.Framework.Helpers {

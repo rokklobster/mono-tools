@@ -26,17 +26,11 @@
 
 using System;
 using System.Runtime.InteropServices;
-
-using Mono.Cecil;
-
 using Gendarme.Framework;
 using Gendarme.Rules.BadPractice;
 
 using NUnit.Framework;
-
-using Test.Rules.Definitions;
 using Test.Rules.Fixtures;
-using Test.Rules.Helpers;
 
 namespace Test.Rules.BadPractice {
 

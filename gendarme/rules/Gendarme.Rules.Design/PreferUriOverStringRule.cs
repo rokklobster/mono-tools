@@ -32,6 +32,8 @@ using Gendarme.Framework.Helpers;
 using Gendarme.Framework.Rocks;
 
 using System;
+using System.Collections.ObjectModel;
+
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
@@ -128,7 +130,7 @@ namespace Gendarme.Rules.Design {
 			return !(type.Namespace == "System" && type.Name == "String") || !IsUri (memberName);
 		}
 
-		private bool FindBadParameters (Collection<ParameterDefinition> parameters)
+		private bool FindBadParameters (IList<ParameterDefinition> parameters)
 		{
 			// Every uri parameter that is a string is recorded by the bitmask.
 			// Note: we're assuming the number of parameters will fit into the bitmask.
@@ -146,7 +148,7 @@ namespace Gendarme.Rules.Design {
 			return defect;
 		}
 
-		private void ReportBadParameters (Collection<ParameterDefinition> parameters)
+		private void ReportBadParameters (IList<ParameterDefinition> parameters)
 		{
 			for (var i = 0; i < parameters.Count; i++) {
 				long bit = 1 << i;

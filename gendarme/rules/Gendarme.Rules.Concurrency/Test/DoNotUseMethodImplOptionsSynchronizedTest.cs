@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 
 using Mono.Cecil;
@@ -66,7 +67,7 @@ namespace Test.Rules.Concurrency {
 		[Test]
 		public void DoesNotApply ()
 		{
-			MethodDefinition md = DefinitionLoader.GetMethodDefinition<DoNotUseMethodImplOptionsSynchronizedTest> ("add_CompilerGeneratedSynchronized");
+			var md = DefinitionLoader.GetMethodDefinition<DoNotUseMethodImplOptionsSynchronizedTest> ("add_CompilerGeneratedSynchronized");
 			if (!md.IsSynchronized)
 				Assert.Ignore ("newer versions of CSC (e.g. 10.0) does not set the Synchronized");
 

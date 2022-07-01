@@ -25,8 +25,6 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-
 using Mono.Cecil;
 
 namespace Gendarme.Framework.Rocks {

@@ -28,8 +28,6 @@
 
 using System;
 using System.Reflection;
-
-using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 
 using Mono.Cecil;
@@ -87,7 +85,7 @@ namespace Test.Framework.Rocks {
 
 		private AssemblyDefinition assembly;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;
@@ -111,27 +109,31 @@ namespace Test.Framework.Rocks {
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Namespace_Null ()
 		{
-			MethodDefinition method = GetMethod ("FixtureSetUp");
-			method.HasAttribute (null, "a");
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				MethodDefinition method = GetMethod("FixtureSetUp");
+				method.HasAttribute(null, "a");
+			});
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Name_Null ()
 		{
-			MethodDefinition method = GetMethod ("FixtureSetUp");
-			method.HasAttribute ("a", null);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				MethodDefinition method = GetMethod("FixtureSetUp");
+				method.HasAttribute("a", null);
+			});
 		}
 
 		[Test]
 		public void HasAttribute ()
 		{
 			MethodDefinition method = GetMethod ("FixtureSetUp");
-			Assert.IsTrue (method.HasAttribute ("NUnit.Framework", "TestFixtureSetUpAttribute"), "NUnit.Framework.TestFixtureSetUpAttribute");
-			Assert.IsFalse (method.HasAttribute ("NUnit.Framework", "TestFixtureSetUp"), "NUnit.Framework.TestFixtureSetUp");
+			Assert.IsTrue (method.HasAttribute ("NUnit.Framework", "SetUpAttribute"), "NUnit.Framework.SetUpAttribute");
+			Assert.IsFalse (method.HasAttribute ("NUnit.Framework", "SetUp"), "NUnit.Framework.SetUp");
 		}
 
 		[Test]

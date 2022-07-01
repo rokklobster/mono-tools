@@ -50,11 +50,11 @@ namespace Test.Rules.Correctness {
 
 		public class CallToEqualsWithNullArg
 		{
-			public static void Main (string [] args)
-			{
-				CallToEqualsWithNullArg c = new CallToEqualsWithNullArg ();
-				c.Equals (null);
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	CallToEqualsWithNullArg c = new CallToEqualsWithNullArg ();
+			// 	c.Equals (null);
+			// }
 		}
 
 		[Test]
@@ -65,13 +65,13 @@ namespace Test.Rules.Correctness {
 		
 		public class CallingEqualsWithNonNullArg 
 		{
-			public static void Main (string [] args)
-			{
-				CallingEqualsWithNonNullArg c = new CallingEqualsWithNonNullArg ();
-				CallingEqualsWithNonNullArg c1 = new CallingEqualsWithNonNullArg ();
-				c.Equals (c1);
-				c1 = null; // ensure an LDNULL instruction is inside the method
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	CallingEqualsWithNonNullArg c = new CallingEqualsWithNonNullArg ();
+			// 	CallingEqualsWithNonNullArg c1 = new CallingEqualsWithNonNullArg ();
+			// 	c.Equals (c1);
+			// 	c1 = null; // ensure an LDNULL instruction is inside the method
+			// }
 		}
 
 		[Test]

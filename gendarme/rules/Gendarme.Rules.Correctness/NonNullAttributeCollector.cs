@@ -11,13 +11,10 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using System;
 using System.Collections;
 using System.IO;
-
 using Mono.Cecil;
-
-using Gendarme.Framework.Rocks;
+using Mono.Cecil.Rocks;
 
 namespace Gendarme.Rules.Correctness {
 

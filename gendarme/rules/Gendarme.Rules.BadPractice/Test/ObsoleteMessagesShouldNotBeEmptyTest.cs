@@ -25,11 +25,6 @@
 // THE SOFTWARE.
 
 using System;
-using System.Reflection;
-
-using Mono.Cecil;
-
-using Gendarme.Framework;
 using Gendarme.Rules.BadPractice;
 
 using NUnit.Framework;

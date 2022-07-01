@@ -11,14 +11,14 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using Mono.Cecil;
+using System.Collections.Generic;
 using Mono.Cecil.Cil;
 
 namespace Gendarme.Rules.Correctness {
 
 public class BasicBlock : Node {
     /* All instructions in the method */
-    [NonNull] private InstructionCollection instructions;
+    [NonNull] private IList<Instruction> instructions;
 
     /* Index of the first instruction in this basic block */
     internal int first;
@@ -29,12 +29,12 @@ public class BasicBlock : Node {
     internal bool isExit = false;
     internal bool isException = false;
 
-    public BasicBlock([NonNull] InstructionCollection instructions)
+    public BasicBlock([NonNull] IList<Instruction> instructions)
     {
         this.instructions = instructions;
     }
 
-    public InstructionCollection Instructions {
+    public IList<Instruction> Instructions {
         [NonNull]
         get { return instructions; }
     }

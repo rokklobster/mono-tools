@@ -12,12 +12,10 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using System;
-using System.Collections;
+
 using System.Diagnostics;
-using Mono.Cecil;
 using Gendarme.Framework;
-using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Correctness {
 

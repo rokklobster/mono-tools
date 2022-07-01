@@ -34,7 +34,6 @@ using System.Reflection;
 using Gendarme.Framework;
 using Gendarme.Rules.BadPractice;
 using Mono.Cecil;
-using Mono.Cecil.Cil;
 using NUnit.Framework;
 
 using Test.Rules.Definitions;
@@ -60,7 +59,7 @@ namespace Test.Rules.BadPractice {
 		private CheckNewExceptionWithoutThrowingRule rule;
 		private TestRunner runner;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;

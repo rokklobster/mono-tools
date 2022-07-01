@@ -32,8 +32,6 @@ using Mono.Cecil.Cil;
 
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
-using Gendarme.Framework.Engines;
-using Gendarme.Framework.Helpers;
 
 namespace Gendarme.Rules.BadPractice {
 

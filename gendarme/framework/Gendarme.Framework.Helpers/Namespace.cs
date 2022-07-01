@@ -29,7 +29,6 @@ using System;
 using System.Collections.Generic;
 
 using Mono.Cecil;
-using Mono.Cecil.Metadata;
 
 namespace Gendarme.Framework.Helpers {
 

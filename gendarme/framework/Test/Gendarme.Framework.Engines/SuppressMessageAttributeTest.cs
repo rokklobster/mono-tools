@@ -54,7 +54,7 @@ namespace Test.Framework {
 	[TestFixture]
 	public class SuppressMessageAttribute_AssemblyTest : AssemblyRuleTestFixture<SuppressAssemblyRule> {
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			Runner.Engines.Subscribe ("Gendarme.Framework.Engines.SuppressMessageEngine");
@@ -90,7 +90,7 @@ namespace Test.Framework {
 	[TestFixture]
 	public class SuppressMessageAttribute_ModuleTest : AssemblyRuleTestFixture<SuppressModuleRule> {
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			Runner.Engines.Subscribe ("Gendarme.Framework.Engines.SuppressMessageEngine");
@@ -139,7 +139,7 @@ namespace Test.Framework {
 	[TestFixture]
 	public class SuppressMessageAttribute_TypeTest : TypeRuleTestFixture<SuppressTypeRule> {
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			Runner.Engines.Subscribe ("Gendarme.Framework.Engines.SuppressMessageEngine");
@@ -321,7 +321,7 @@ namespace Test.Framework {
 	[TestFixture]
 	public class SuppressMessageAttribute_MethodTest : MethodRuleTestFixture<SuppressMethodRule> {
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			Runner.Engines.Subscribe ("Gendarme.Framework.Engines.SuppressMessageEngine");

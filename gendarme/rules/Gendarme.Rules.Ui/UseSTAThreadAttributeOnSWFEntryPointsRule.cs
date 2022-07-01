@@ -27,11 +27,10 @@
 //
 
 using System;
-
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
-
 using Mono.Cecil;
+
 
 namespace Gendarme.Rules.UI {
 

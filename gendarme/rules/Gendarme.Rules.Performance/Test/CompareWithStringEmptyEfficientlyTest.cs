@@ -51,81 +51,81 @@ namespace Test.Rules.Performance {
 
 		public class UsingStringEquals {
 			string s = "";
-			public static void Main (string [] args)
-			{
-				UsingStringEquals u = new UsingStringEquals ();
-				if (u.s.Equals ("")) {
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	UsingStringEquals u = new UsingStringEquals ();
+			// 	if (u.s.Equals ("")) {
+			// 	}
+			// }
 		}
 
 		public class UsingStringEqualsEmpty {
 			string s = "";
-			public static void Main (string [] args)
-			{
-				UsingStringEqualsEmpty u = new UsingStringEqualsEmpty ();
-				if (u.s.Equals (String.Empty)) {
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	UsingStringEqualsEmpty u = new UsingStringEqualsEmpty ();
+			// 	if (u.s.Equals (String.Empty)) {
+			// 	}
+			// }
 		}
 
 		public class UsingStringLength {
 			string s = "";
-			public static void Main (string [] args)
-			{
-				UsingStringLength u = new UsingStringLength ();
-				if (u.s.Length == 0) {
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	UsingStringLength u = new UsingStringLength ();
+			// 	if (u.s.Length == 0) {
+			// 	}
+			// }
 		}
 
 		public class UsingEqualsWithNonStringArg {
 			int i = 0;
-			public static void Main (string [] args)
-			{
-				UsingEqualsWithNonStringArg u = new UsingEqualsWithNonStringArg ();
-				if (u.i.Equals (1)) {
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	UsingEqualsWithNonStringArg u = new UsingEqualsWithNonStringArg ();
+			// 	if (u.i.Equals (1)) {
+			// 	}
+			// }
 		}
 
 		public class AnotherUseOfEqualsWithEmptyString {
 			string s = "abc";
-			public static void Main (string [] args)
-			{
-				AnotherUseOfEqualsWithEmptyString a = new AnotherUseOfEqualsWithEmptyString ();
-				bool b = a.s.Equals ("");
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	AnotherUseOfEqualsWithEmptyString a = new AnotherUseOfEqualsWithEmptyString ();
+			// 	bool b = a.s.Equals ("");
+			// }
 		}
 
 		public class AnotherUseOfEqualsWithStringEmpty {
 			string s = "abc";
-			public static void Main (string [] args)
-			{
-				AnotherUseOfEqualsWithStringEmpty a = new AnotherUseOfEqualsWithStringEmpty ();
-				bool b = a.s.Equals (String.Empty);
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	AnotherUseOfEqualsWithStringEmpty a = new AnotherUseOfEqualsWithStringEmpty ();
+			// 	bool b = a.s.Equals (String.Empty);
+			// }
 		}
 
 		public class OneMoreUseOfEqualsWithEmptyString {
 			string s = "";
-			public static void Main (string [] args)
-			{
-				OneMoreUseOfEqualsWithEmptyString o = new OneMoreUseOfEqualsWithEmptyString ();
-				if (o.s.Equals ("")) {
-					bool b = o.s.Equals ("");
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	OneMoreUseOfEqualsWithEmptyString o = new OneMoreUseOfEqualsWithEmptyString ();
+			// 	if (o.s.Equals ("")) {
+			// 		bool b = o.s.Equals ("");
+			// 	}
+			// }
 		}
 
 		public class UsingEqualsWithNonEmptyString {
 			string s = "";
-			public static void Main (string [] args)
-			{
-				UsingEqualsWithNonEmptyString u = new UsingEqualsWithNonEmptyString ();
-				if (u.s.Equals ("abc")) {
-				}
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	UsingEqualsWithNonEmptyString u = new UsingEqualsWithNonEmptyString ();
+			// 	if (u.s.Equals ("abc")) {
+			// 	}
+			// }
 		}
 
 		[Test]

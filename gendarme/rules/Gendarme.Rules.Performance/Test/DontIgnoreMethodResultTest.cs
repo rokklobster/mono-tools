@@ -111,9 +111,6 @@ namespace Test.Rules.Performance {
 			public void PermissionSetOk ()
 			{
 				PermissionSet set = new PermissionSet (PermissionState.None);
-				// the IPermission this returns may not be needed
-				set.AddPermission (new GacIdentityPermission ());
-				set.RemovePermission (typeof (GacIdentityPermission));
 			}
 
 			public void PermissionSetBad ()

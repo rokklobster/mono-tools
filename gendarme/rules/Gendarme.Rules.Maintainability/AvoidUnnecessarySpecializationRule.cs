@@ -36,6 +36,7 @@ using Gendarme.Framework.Helpers;
 
 using System.Collections.Generic;
 
+
 namespace Gendarme.Rules.Maintainability {
 
 	/// <summary>

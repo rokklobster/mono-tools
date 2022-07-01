@@ -26,12 +26,9 @@
 
 using System;
 using System.Reflection;
-
-using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 
 using Mono.Cecil;
-using Mono.Collections.Generic;
 using NUnit.Framework;
 
 namespace Test.Framework.Rocks {
@@ -41,7 +38,7 @@ namespace Test.Framework.Rocks {
 
 		private AssemblyDefinition assembly;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = Assembly.GetExecutingAssembly ().Location;
@@ -49,19 +46,23 @@ namespace Test.Framework.Rocks {
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Namespace_Null ()
 		{
-			TypeDefinition type = assembly.MainModule.GetType ("Test.Framework.Rocks.CustomAttributeRocksTest");
-			type.HasAttribute (null, "a");
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				TypeDefinition type = assembly.MainModule.GetType("Test.Framework.Rocks.CustomAttributeRocksTest");
+				type.HasAttribute(null, "a");
+			});
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Name_Null ()
 		{
-			TypeDefinition type = assembly.MainModule.GetType ("Test.Framework.Rocks.CustomAttributeRocksTest");
-			type.HasAttribute ("a", null);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				TypeDefinition type = assembly.MainModule.GetType("Test.Framework.Rocks.CustomAttributeRocksTest");
+				type.HasAttribute("a", null);
+			});
 		}
 		
 		[Test]

@@ -25,10 +25,7 @@
 // THE SOFTWARE.
 
 using System;
-using System.Reflection;
 using System.Runtime.InteropServices;
-
-using Mono.Cecil;
 using Gendarme.Framework;
 using Gendarme.Rules.BadPractice;
 

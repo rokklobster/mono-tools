@@ -158,15 +158,7 @@ namespace Test.Rules.Correctness {
 		}
 	}
 
-	class ValidatorCases {
-		void Success1 (string input) {
-			(new RegexStringValidator ("^[a-z]+")).Validate (input);
-		}
 
-		void Failure1 (string input) {
-			(new RegexStringValidator ("^[a-z+")).Validate (input);
-		}
-	}
 
 	[TestFixture]
 	public class ProvideCorrectRegexPatternTest : MethodRuleTestFixture<ProvideCorrectRegexPatternRule> {
@@ -304,16 +296,5 @@ namespace Test.Rules.Correctness {
 			AssertRuleFailure<RegexCases> ("Failure67", 2);
 		}
 
-		[Test]
-		public void ValidatorClassSuccess1 ()
-		{
-			AssertRuleSuccess<ValidatorCases> ("Success1");
-		}
-
-		[Test]
-		public void ValidatorClassFailure1 ()
-		{
-			AssertRuleFailure<ValidatorCases> ("Failure1", 1);
-		}
 	}
 }

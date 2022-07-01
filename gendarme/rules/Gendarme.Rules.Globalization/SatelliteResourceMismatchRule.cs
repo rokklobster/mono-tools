@@ -29,10 +29,10 @@
 using System;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Resources;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Mono.Cecil;
 using Mono.Collections.Generic;
@@ -77,7 +77,7 @@ namespace Gendarme.Rules.Globalization {
 		private void CheckSatelliteAssembly (AssemblyDefinition satellite)
 		{
 			string culture = satellite.Name.Culture;
-			Collection<Resource> satellitesResources = satellite.MainModule.Resources;
+			IList<Resource> satellitesResources = satellite.MainModule.Resources;
 			foreach (EmbeddedResource resource in satellitesResources) {
 				EmbeddedResource mainResource;
 				string resourceName = GetNameInSatellite (resource, culture);
@@ -241,7 +241,7 @@ namespace Gendarme.Rules.Globalization {
 					// Build cache of resources files
 					files = new Dictionary<string, EmbeddedResource> ();
 
-					Collection<Resource> mainResources = assembly.MainModule.Resources;
+					IList<Resource> mainResources = assembly.MainModule.Resources;
 					foreach (EmbeddedResource resource in mainResources)
 						files.Add (resource.Name, resource);
 				}

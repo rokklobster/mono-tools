@@ -27,6 +27,7 @@
 //
 
 using System;
+
 using System.Globalization;
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;

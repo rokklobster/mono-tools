@@ -41,65 +41,65 @@ namespace Test.Rules.Portability {
 	internal class CommonMainClass { }
 
 	internal class GoodIntMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			if (arguments.Length > 0)
-				return 0;
-			else if (arguments.IsReadOnly)
-				return 255;
-			return 42;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	if (arguments.Length > 0)
+		// 		return 0;
+		// 	else if (arguments.IsReadOnly)
+		// 		return 255;
+		// 	return 42;
+		// }
 	}
 
 	internal class UnsureIntMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			return arguments.Length;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	return arguments.Length;
+		// }
 	}
 
 	internal class TooBigReturnedMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			if (arguments.Length > 0)
-				return 0;
-			else if (arguments.IsReadOnly)
-				return 256; // too big!
-			return 42;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	if (arguments.Length > 0)
+		// 		return 0;
+		// 	else if (arguments.IsReadOnly)
+		// 		return 256; // too big!
+		// 	return 42;
+		// }
 	}
 
 	internal class MinusOneReturnedMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			if (arguments.Length > 0)
-				return -1; // bad
-			else if (arguments.IsReadOnly)
-				return 255;
-			return 42;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	if (arguments.Length > 0)
+		// 		return -1; // bad
+		// 	else if (arguments.IsReadOnly)
+		// 		return 255;
+		// 	return 42;
+		// }
 	}
 
 	internal class SmallNegativeReturnedMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			if (arguments.Length > 0)
-				return 42;
-			else if (arguments.IsReadOnly)
-				return -10; // bad
-			return 77;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	if (arguments.Length > 0)
+		// 		return 42;
+		// 	else if (arguments.IsReadOnly)
+		// 		return -10; // bad
+		// 	return 77;
+		// }
 	}
 
 	internal class BigNegativeReturnedMainClass : CommonMainClass {
-		public static int Main (string [] arguments)
-		{
-			if (arguments.Length > 0)
-				return 42;
-			else if (arguments.IsReadOnly)
-				return -100000; // bad
-			return 77;
-		}
+		// public static int Main (string [] arguments)
+		// {
+		// 	if (arguments.Length > 0)
+		// 		return 42;
+		// 	else if (arguments.IsReadOnly)
+		// 		return -100000; // bad
+		// 	return 77;
+		// }
 	}
 
 	internal class EnvSetExitCodeTester {
@@ -189,7 +189,7 @@ namespace Test.Rules.Portability {
 		private TypeDefinition envSetExitCodeTester;
 		private TypeDefinition envExitTester;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

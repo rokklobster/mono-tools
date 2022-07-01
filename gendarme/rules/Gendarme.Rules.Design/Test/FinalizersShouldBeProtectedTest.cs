@@ -47,7 +47,7 @@ namespace Test.Rules.Design {
 
 		private TypeDefinition non_protected_finalizer_class;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

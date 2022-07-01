@@ -42,31 +42,31 @@ namespace Test.Rules.Ui {
 	internal class CommonMainClass { }
 
 	internal class NoAttributesMain : CommonMainClass {
-		public static void Main ()
-		{
-		}
+		// public static void Main ()
+		// {
+		// }
 	}
 
 	internal class STAThreadMain : CommonMainClass {
-		[STAThread]
-		public static void Main ()
-		{
-		}
+		// [STAThread]
+		// public static void Main ()
+		// {
+		// }
 	}
 
 	internal class MTAThreadMain : CommonMainClass {
-		[MTAThread]
-		public static void Main ()
-		{
-		}
+		// [MTAThread]
+		// public static void Main ()
+		// {
+		// }
 	}
 
 	internal class BothSTAAndMTAThreadMain : CommonMainClass {
-		[STAThread]
-		[MTAThread]
-		public static void Main ()
-		{
-		}
+		// [STAThread]
+		// [MTAThread]
+		// public static void Main ()
+		// {
+		// }
 	}
 
 	[TestFixture]
@@ -76,7 +76,7 @@ namespace Test.Rules.Ui {
 		private TestRunner runner;
 		private AssemblyDefinition assembly;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

@@ -30,8 +30,6 @@ using System;
 using System.Collections.Generic;
 
 using Mono.Cecil;
-using Mono.Cecil.Metadata;
-
 using Gendarme.Framework.Helpers;
 
 namespace Gendarme.Framework.Rocks {

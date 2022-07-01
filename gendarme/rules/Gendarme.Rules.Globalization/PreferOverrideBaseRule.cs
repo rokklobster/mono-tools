@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Mono.Cecil;
 using Mono.Cecil.Cil;
@@ -56,7 +57,7 @@ namespace Gendarme.Rules.Globalization {
 
 		protected abstract void Report (MethodDefinition method, Instruction instruction, MethodReference prefered);
 
-		static bool MatchParameters (Collection<ParameterDefinition> pmethod, Collection<ParameterDefinition> candidate, int offset)
+		static bool MatchParameters (IList<ParameterDefinition> pmethod, IList<ParameterDefinition> candidate, int offset)
 		{
 			int ccount = candidate.Count - offset;
 			int count = Math.Min (pmethod.Count, ccount - offset);
@@ -86,7 +87,7 @@ namespace Gendarme.Rules.Globalization {
 
 			string name = method.Name;
 			int pcount = 0;
-			Collection<ParameterDefinition> mparams = null;
+			IList<ParameterDefinition> mparams = null;
 			if (method.HasParameters) {
 				mparams = method.Parameters;
 				pcount = mparams.Count;
@@ -97,7 +98,7 @@ namespace Gendarme.Rules.Globalization {
 				if (!md.HasParameters)
 					continue;
 
-				Collection<ParameterDefinition> pdc = md.Parameters;
+				IList<ParameterDefinition> pdc = md.Parameters;
 				if (name != md.Name)
 					continue;
 
@@ -150,7 +151,7 @@ namespace Gendarme.Rules.Globalization {
 
 				// check if the call starts or ends with our 'prefered' override
 				if (mr.HasParameters) {
-					Collection<ParameterDefinition> pdc = mr.Parameters;
+					IList<ParameterDefinition> pdc = mr.Parameters;
 					if (CheckFirstParameter && IsPrefered (pdc [0].ParameterType))
 						continue;
 					if (IsPrefered (pdc [pdc.Count - 1].ParameterType))

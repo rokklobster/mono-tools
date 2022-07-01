@@ -28,13 +28,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-
-using Mono.Cecil;
-using Mono.Cecil.Cil;
 
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
 
 namespace Gendarme.Rules.Correctness {
 

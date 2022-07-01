@@ -78,11 +78,11 @@ namespace Test.Rules.Performance {
 			{
 			}
 
-			public static void Main (string [] args)
-			{
-				CalledPrivateMethod c = new CalledPrivateMethod ();
-				c.display ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	CalledPrivateMethod c = new CalledPrivateMethod ();
+			// 	c.display ();
+			// }
 		}
 
 		[Test]
@@ -106,11 +106,11 @@ namespace Test.Rules.Performance {
 		}
 
 		public class MethodCallingClass {
-			public static void Main (string [] args)
-			{
-				CalledInternalMethod c = new CalledInternalMethod ();
-				c.CalledMethod ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	CalledInternalMethod c = new CalledInternalMethod ();
+			// 	c.CalledMethod ();
+			// }
 		}
 
 		[Test]
@@ -153,11 +153,11 @@ namespace Test.Rules.Performance {
 			{
 			}
 
-			public static void Main (string [] args)
-			{
-				PublicMethodsInPrivateClass p = new PublicMethodsInPrivateClass ();
-				p.PublicCalledMethod ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	PublicMethodsInPrivateClass p = new PublicMethodsInPrivateClass ();
+			// 	p.PublicCalledMethod ();
+			// }
 		}
 
 		internal class PublicMethodsInInternalClass {
@@ -173,11 +173,11 @@ namespace Test.Rules.Performance {
 			{
 			}
 
-			public static void Main (string [] args)
-			{
-				PublicMethodsInInternalClass p = new PublicMethodsInInternalClass ();
-				p.PublicCalledMethod ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	PublicMethodsInInternalClass p = new PublicMethodsInInternalClass ();
+			// 	p.PublicCalledMethod ();
+			// }
 		}
 
 		[Test]
@@ -396,11 +396,11 @@ namespace Test.Rules.Performance {
 				return String.Empty;
 			}
 
-			public static void Main (string [] args)
-			{
-				CallingPrivateMethodsThroughDelegates c = new CallingPrivateMethodsThroughDelegates ();
-				delegateExample d = new delegateExample (c.privateMethod);
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	CallingPrivateMethodsThroughDelegates c = new CallingPrivateMethodsThroughDelegates ();
+			// 	delegateExample d = new delegateExample (c.privateMethod);
+			// }
 		}
 
 		[Test]

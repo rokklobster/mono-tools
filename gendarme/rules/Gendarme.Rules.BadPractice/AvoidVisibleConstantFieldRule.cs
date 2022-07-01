@@ -27,8 +27,6 @@
 using System.Globalization;
 
 using Mono.Cecil;
-using Mono.Cecil.Cil;
-
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
 

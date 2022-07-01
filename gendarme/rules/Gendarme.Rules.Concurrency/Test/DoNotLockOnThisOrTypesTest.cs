@@ -28,9 +28,7 @@
 
 using System;
 using System.Collections.Generic;
-
 using Gendarme.Rules.Concurrency;
-
 using NUnit.Framework;
 using Test.Rules.Definitions;
 using Test.Rules.Fixtures;

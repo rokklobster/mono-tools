@@ -48,7 +48,7 @@ namespace Test.Rules.Design {
 
 		private TypeDefinition sealed_class_with_virtual_method;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;

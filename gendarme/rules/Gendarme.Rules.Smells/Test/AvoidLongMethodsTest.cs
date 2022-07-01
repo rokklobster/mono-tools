@@ -30,7 +30,6 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Reflection;
-using System.Windows.Forms;
 
 using Mono.Cecil;
 using Gendarme.Framework;
@@ -870,149 +869,7 @@ namespace Test.Rules.Smells {
 
 	}
 
-	public class MainForm : Form {
-		public void InitializeComponent () 
-		{
-			Console.WriteLine ("I'm writting a test, and I will fill a screen with some useless code");
-			IList list = new ArrayList ();
-			list.Add ("Foo");
-			list.Add (4);
-			list.Add (6);
-
-			IEnumerator listEnumerator = list.GetEnumerator ();
-			while (listEnumerator.MoveNext ())
-				Console.WriteLine (listEnumerator.Current);
-
-			try {
-				list.Add ("Bar");
-				list.Add ('a');
-			}
-			catch (NotSupportedException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-
-			foreach (object value in list) {
-				Console.Write (value);
-				Console.Write (Environment.NewLine);
-			}
-			
-			int x = 0;
-
-			for (int i = 0; i < 100; i++)
-				x++;
-			Console.WriteLine (x);
 	
-			string useless = "Useless String";
-
-			if (useless.Equals ("Other useless")) {
-				useless = String.Empty;
-				Console.WriteLine ("Other useless string");
-			}
-			
-			useless = String.Concat (useless," 1");
-			
-			for (int j = 0; j < useless.Length; j++) {
-				if (useless[j] == 'u')
-					Console.WriteLine ("I have detected an u char");
-				else
-					Console.WriteLine ("I have detected an useless char");
-			}
-			
-			try {
-				foreach (string environmentVariable in Environment.GetEnvironmentVariables ().Keys)
-					Console.WriteLine (environmentVariable);
-			}
-			catch (System.Security.SecurityException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-
-			Console.WriteLine ("I will add more useless code !!");
-			
-			try {
-				if (!(File.Exists ("foo.txt"))) {
-					File.Create ("foo.txt");	
-					File.Delete ("foo.txt");
-				}
-			}
-			catch (IOException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-		}
-		
-		protected virtual void Build () 
-		{
-			Console.WriteLine ("I'm writting a test, and I will fill a screen with some useless code");
-			IList list = new ArrayList ();
-			list.Add ("Foo");
-			list.Add (4);
-			list.Add (6);
-
-			IEnumerator listEnumerator = list.GetEnumerator ();
-			while (listEnumerator.MoveNext ())
-				Console.WriteLine (listEnumerator.Current);
-
-			try {
-				list.Add ("Bar");
-				list.Add ('a');
-			}
-			catch (NotSupportedException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-
-			foreach (object value in list) {
-				Console.Write (value);
-				Console.Write (Environment.NewLine);
-			}
-			
-			int x = 0;
-
-			for (int i = 0; i < 100; i++)
-				x++;
-			Console.WriteLine (x);
-	
-			string useless = "Useless String";
-
-			if (useless.Equals ("Other useless")) {
-				useless = String.Empty;
-				Console.WriteLine ("Other useless string");
-			}
-			
-			useless = String.Concat (useless," 1");
-			
-			for (int j = 0; j < useless.Length; j++) {
-				if (useless[j] == 'u')
-					Console.WriteLine ("I have detected an u char");
-				else
-					Console.WriteLine ("I have detected an useless char");
-			}
-			
-			try {
-				foreach (string environmentVariable in Environment.GetEnvironmentVariables ().Keys)
-					Console.WriteLine (environmentVariable);
-			}
-			catch (System.Security.SecurityException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-
-			Console.WriteLine ("I will add more useless code !!");
-			
-			try {
-				if (!(File.Exists ("foo.txt"))) {
-					File.Create ("foo.txt");	
-					File.Delete ("foo.txt");
-				}
-			}
-			catch (IOException exception) {
-				Console.WriteLine (exception.Message);
-				Console.WriteLine (exception);
-			}
-		}
-	}
 
 	[TestFixture]
 	public class AvoidLongMethodsTest : MethodRuleTestFixture<AvoidLongMethodsRule> {
@@ -1309,18 +1166,6 @@ namespace Test.Rules.Smells {
 		}
 
 		[Test]
-		public void FormInitializeComponentTest () 
-		{
-			AssertRuleDoesNotApply<MainForm> ("InitializeComponent");
-		}
-
-		[Test]
-		public void FormBuildMethodTest () 
-		{
-			AssertRuleFailure<MainForm> ("Build", 1);
-		}
-
-		[Test]
 		public void LongStaticConstructorWithoutFieldsTest () 
 		{
 			AssertRuleFailure<LongStaticConstructorWithoutFields> (".cctor", 1);
@@ -1368,7 +1213,7 @@ namespace Test.Rules.Smells {
 			Rule.UseIlApproximation = false;
 		}
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			AssemblyDefinition assembly = DefinitionLoader.GetAssemblyDefinition<AvoidLongMethodsTest> ();

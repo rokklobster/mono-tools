@@ -54,7 +54,7 @@ namespace Test.Rules.Performance {
 	[TestFixture]
 	public class AvoidUnsealedConcreteAttributesTest : TypeRuleTestFixture<AvoidUnsealedConcreteAttributesRule> {
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void SetUp ()
 		{
 			Runner.Engines.Subscribe ("Gendarme.Framework.Engines.SuppressMessageEngine");

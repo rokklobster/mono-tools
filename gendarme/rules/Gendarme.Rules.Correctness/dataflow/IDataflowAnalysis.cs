@@ -12,8 +12,6 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using System.Collections;
-
 namespace Gendarme.Rules.Correctness {
 
 public interface IDataflowAnalysis {

@@ -29,12 +29,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
 using System.Globalization;
-
-using Mono.Cecil;
-
 using Gendarme.Framework;
 using Gendarme.Framework.Rocks;
+using Mono.Cecil;
 
 namespace Gendarme.Rules.Performance {
 

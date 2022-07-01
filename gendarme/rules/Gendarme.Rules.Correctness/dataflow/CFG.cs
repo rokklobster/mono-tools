@@ -12,11 +12,10 @@
  * See the included LICENSE.MIT file for details.
  **********************************************************************/
 
-using System;
 using System.Collections;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
-using Gendarme.Framework;
+using Gendarme.Framework.Helpers;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
@@ -24,7 +23,7 @@ namespace Gendarme.Rules.Correctness {
 
 public class CFG : Graph { 
 
-    [NonNull] private InstructionCollection instructions;
+    [NonNull] private IList<Instruction> instructions;
     [NonNull] private MethodDefinition method;
     [NonNull] private MethodPrinter printer;
     private BasicBlock entryPoint;
@@ -46,12 +45,12 @@ public class CFG : Graph {
     public bool BeginsCatch(BasicBlock bb)
     {
         ExceptionHandler handler = printer.StartsHandlerRegion (bb.FirstInstruction);
-        if (handler != null && handler.Type == ExceptionHandlerType.Catch)
+        if (handler != null && handler.HandlerType == ExceptionHandlerType.Catch)
             return true;
         return false;
     }
 
-    private void Init([NonNull] InstructionCollection instructions,
+    private void Init([NonNull] IList<Instruction> instructions,
             [NonNull] MethodDefinition method)
     {
         this.instructions = instructions;
@@ -74,10 +73,10 @@ public class CFG : Graph {
     private BasicBlock GetNearestFinally(Instruction insn, Hashtable insnBB)
     {
         BasicBlock nearest = null;
-        InstructionCollection insns = method.Body.Instructions;
+        IList<Instruction> insns = method.Body.Instructions;
         int width = insns[insns.Count - 1].Offset;
         foreach(ExceptionHandler handler in method.Body.ExceptionHandlers) {
-            if(handler.Type == ExceptionHandlerType.Finally) {
+            if(handler.HandlerType == ExceptionHandlerType.Finally) {
                 if(insn.Offset >= handler.TryStart.Offset &&
                         insn.Offset < handler.TryEnd.Offset &&
                         (handler.TryEnd.Offset -

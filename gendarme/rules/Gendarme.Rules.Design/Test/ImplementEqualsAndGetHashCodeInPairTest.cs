@@ -107,12 +107,12 @@ namespace Test.Rules.Design {
 			{
 				return this == obj;
 			}
-			public static void Main (string [] args)
-			{
-				int j = 0;
-				ImplementsEqualsUsesObjectGetHashCode i = new ImplementsEqualsUsesObjectGetHashCode ();
-				j = i.GetHashCode ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	int j = 0;
+			// 	ImplementsEqualsUsesObjectGetHashCode i = new ImplementsEqualsUsesObjectGetHashCode ();
+			// 	j = i.GetHashCode ();
+			// }
 		}
 
 		[Test]
@@ -130,12 +130,12 @@ namespace Test.Rules.Design {
 			{
  				 return base.GetHashCode();
 			}
-			public static void Main (string [] args)
-			{
-				int j = 0;
-				ImplementsEqualsUsesObjectGetHashCode i = new ImplementsEqualsUsesObjectGetHashCode ();
-				j = i.GetHashCode ();
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	int j = 0;
+			// 	ImplementsEqualsUsesObjectGetHashCode i = new ImplementsEqualsUsesObjectGetHashCode ();
+			// 	j = i.GetHashCode ();
+			// }
 		}
 
 		[Test]
@@ -149,12 +149,12 @@ namespace Test.Rules.Design {
 			{
 				return 1;
 			}
-			public static void Main (string [] args)
-			{
-				ImplementsGetHashCodeUsesObjectEquals i = new ImplementsGetHashCodeUsesObjectEquals ();
-				ImplementsGetHashCodeUsesObjectEquals i1 = new ImplementsGetHashCodeUsesObjectEquals ();
-				i.Equals (i1);
-			}
+			// public static void Main (string [] args)
+			// {
+			// 	ImplementsGetHashCodeUsesObjectEquals i = new ImplementsGetHashCodeUsesObjectEquals ();
+			// 	ImplementsGetHashCodeUsesObjectEquals i1 = new ImplementsGetHashCodeUsesObjectEquals ();
+			// 	i.Equals (i1);
+			// }
 		}
 
 		[Test]

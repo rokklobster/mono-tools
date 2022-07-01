@@ -30,8 +30,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-
-using Gendarme.Framework;
 using Gendarme.Framework.Helpers;
 using Gendarme.Framework.Rocks;
 
@@ -124,7 +122,7 @@ namespace Test.Framework.Rocks {
 		private AssemblyDefinition assembly;
 		private TypeDefinition type;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void FixtureSetUp ()
 		{
 			string unit = System.Reflection.Assembly.GetExecutingAssembly ().Location;
@@ -178,17 +176,15 @@ namespace Test.Framework.Rocks {
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Namespace_Null ()
 		{
-			GetType (String.Empty).HasAttribute (null, "a");
+			Assert.Throws<ArgumentNullException>(() => GetType(String.Empty).HasAttribute(null, "a"));
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void HasAttribute_Name_Null ()
 		{
-			GetType (String.Empty).HasAttribute ("a", null);
+			Assert.Throws<ArgumentNullException>(() => GetType (String.Empty).HasAttribute ("a", null));
 		}
 
 		[Test]
@@ -210,17 +206,15 @@ namespace Test.Framework.Rocks {
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void Implements_Namespace_Null ()
 		{
-			GetType (String.Empty).Implements (null, "a");
+			Assert.Throws<ArgumentNullException>(() => GetType (String.Empty).Implements (null, "a"));
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void Implements_Name_Null ()
 		{
-			GetType (String.Empty).Implements ("a", null);
+			Assert.Throws<ArgumentNullException>(() => GetType (String.Empty).Implements ("a", null));
 		}
 
 		[Test]
@@ -235,17 +229,15 @@ namespace Test.Framework.Rocks {
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void Inherits_Namespace_Null ()
 		{
-			GetType (String.Empty).Inherits (null, "a");
+			Assert.Throws<ArgumentNullException>(() => GetType (String.Empty).Inherits (null, "a"));
 		}
 
 		[Test]
-		[ExpectedException (typeof (ArgumentNullException))]
 		public void Inherits_Name_Null ()
 		{
-			GetType (String.Empty).Inherits ("a", null);
+			Assert.Throws<ArgumentNullException>(() => GetType (String.Empty).Inherits ("a", null));
 		}
 
 		[Test]

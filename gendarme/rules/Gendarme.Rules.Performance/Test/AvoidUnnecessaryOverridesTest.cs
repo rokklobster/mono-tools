@@ -94,11 +94,7 @@ namespace Tests.Rules.Performance {
 			{
 				return base.DoSomething ();
 			}
-			[FileIOPermission (SecurityAction.Demand)]
-			public override string ToString ()
-			{
-				return base.ToString ();
-			}
+
 			public override bool Equals (object obj)
 			{
 				if (obj == null)
